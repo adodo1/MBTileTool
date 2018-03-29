@@ -94,7 +94,7 @@ namespace MBTileTool
         private void toolStripButtonPack_Click(object sender, EventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filter = "瓦片集合|*.mbtile";
+            dialog.Filter = "瓦片集合|*.mbtile|所有文件|*.*";
             if (dialog.ShowDialog(this) != DialogResult.OK) return;
 
             // 
@@ -169,7 +169,7 @@ namespace MBTileTool
             }
 
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "瓦片集合|*.mbtile";
+            dialog.Filter = "瓦片集合|*.mbtile|所有文件|*.*";
             if (dialog.ShowDialog(this) != DialogResult.OK) return;
             string mbtiles = dialog.FileName;
             //
