@@ -120,7 +120,7 @@
   <metadata name="statusStripInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="toolStripPack.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>161, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -177,6 +177,28 @@
         +1thHGCwqnkqn9OeiGSqpHYc98rrj9CeiGSqxraI6EMC14xoPIHSDqsOedxnVNsC2Q+Y+9YQuXtB5Faj
         qNHB/6DI5OD9OflsTnsikimTZxXHsWeNm2cU1nTDv52PAlZ1n2Fyr2Y/0OAMYe9K0bhUkGfsgSlUzqvu
         Mxqcy9kP1MlBcKQg6lml305BfcqnHS1hMHwCRFa5ehdmAfIAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="toolStripnExtract.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>274, 17</value>
+  </metadata>
+  <data name="toolStripButtonOutPath.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEDSURBVDhPYxj8oG/2hv8wDBUiHhQ2Lfi/btcZOG6auAq3
+        Ice7zf/D8MIlc8C4ccoWMG6A0iAMk4Nqg4DV6bIoAjPnL/z/4+dvnBgkD1XKwHCwXvv/jxczwPjDjQn/
+        X1zo+D9p9rL/X7//xolB8lDtDAy76jX+//hwAgX3TFv1/+PnXzgxSB6qHWhAJdCAFxtQcPuUtf/ffPiJ
+        E4PkodoZGDaBDHiwAAWDxIjBYANW5yr9/wH0OwyD+Q+AYUIAg9SBDVgMjIEfNzrAeHWuKpyND4P0gDWD
+        wJxo8f8/LlRANF9oIIhB6qFaIaDXXwSquYIgBqmFakMFcxLl/xODocqpCRgYAHCS0Ru2vnntAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABwSURBVDhPYxiB4NDBg/+hTPwApBBdMYi/dPUmDHEMAFIw
+        Y+4SFIUgNjqGSmECkCTIAKJsQwcgDTCN6K4gCoA0wDQhGwaWJASQNYAwyAUkuQKmEcoF80EGnDp7mbAh
+        MMXoCnGJowCQJDrGJz6sAAMDAAjStXCMDGhKAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="toolStripButtonExtract.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

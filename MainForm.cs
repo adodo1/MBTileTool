@@ -13,6 +13,8 @@ namespace MBTileTool
 {
     public partial class MainForm : Form
     {
+        private string _outroot = "";
+
         public MainForm()
         {
             InitializeComponent();
@@ -129,19 +131,92 @@ namespace MBTileTool
             MessageBox.Show("完成", "数据打包", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         /// <summary>
+        /// 设置输出路径
+        /// </summary>
+        private void toolStripButtonOutPath_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dlg = new FolderBrowserDialog();
+            if (dlg.ShowDialog(this) != DialogResult.OK) return;
+            string outroot = dlg.DirectoryPath;
+            _outroot = outroot;
+        }
+        /// <summary>
         /// 提取瓦片
         /// </summary>
         private void toolStripButtonExtract_Click(object sender, EventArgs e)
         {
+            string extname = toolStripComboBoxExt.Text.Trim();
+            extname.Replace(":", "");
+            extname.Replace("\\", "");
+            extname.Replace("/", "");
+            extname.Replace("|", "");
+            extname.Replace(">", "");
+            extname.Replace("<", "");
+            extname.Replace("*", "");
+            extname.Replace(".", "");
+            if (string.IsNullOrEmpty(extname)) {
+                MessageBox.Show("请设置文件扩展!", "瓦片提取", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(_outroot) ||
+                System.IO.Directory.Exists(_outroot) == false) {
+                MessageBox.Show("请设置输出路径!", "瓦片提取", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //
+                FolderBrowserDialog dlg = new FolderBrowserDialog();
+                if (dlg.ShowDialog(this) != DialogResult.OK) return;
+                _outroot = dlg.DirectoryPath;
+            }
+
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = "瓦片集合|*.mbtile";
             if (dialog.ShowDialog(this) != DialogResult.OK) return;
-            // 
             string mbtiles = dialog.FileName;
+            //
+            ExtractTiles(_outroot, extname, mbtiles);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="outroot"></param>
+        /// <param name="extname"></param>
+        /// <param name="mbtiles"></param>
+        private void ExtractTiles(string outroot, string extname, string mbtiles)
+        {
+            // 
             SQLiteHelper.SetConnectionString = string.Format("Data Source=\"{0}\"", mbtiles);
             //
+            try {
+                string sql = "";
+                sql = "select count(*) from TILES";
+                int sum = Convert.ToInt32(SQLiteHelper.ExecuteScalar(CommandType.Text, sql));
+                sql = @"select TILE_COLUMN, TILE_ROW, ZOOM_LEVEL, TILE_DATA from TILES";
+                SQLiteDataReader reader = SQLiteHelper.ExecuteReader(CommandType.Text, sql);
+                int count = 0;
+                for (; reader.Read(); ) {
 
+                    if (count % 100 == 0) {
+                        toolStripStatusLabelStatus.Text = string.Format("[{0}/{1}] {2:##}%", count, sum, 100.0 * count / sum);
+                        Application.DoEvents();
+                    }
 
+                    count++;
+                    int col = Convert.ToInt32(reader["TILE_COLUMN"]);
+                    int row = Convert.ToInt32(reader["TILE_ROW"]);
+                    int zoom = Convert.ToInt32(reader["ZOOM_LEVEL"]);
+                    byte[] data = (byte[])reader["TILE_DATA"];
+
+                    //
+                    string savename = string.Format("{0}\\{1}\\{2}\\{3}.{4}", outroot, zoom, row, col, extname);
+                    string savedir = Path.GetDirectoryName(savename);
+                    if (Directory.Exists(savedir) == false) Directory.CreateDirectory(savedir);
+                    File.WriteAllBytes(savename, data);
+                }
+                MessageBox.Show("完成", "数据提取", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "数据提取", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         /// <summary>
         /// 解析文件行列号
