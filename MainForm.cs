@@ -277,6 +277,13 @@ namespace MBTileTool
             ";
             SQLiteHelper.ExecuteNonQuery(CommandType.Text, sql);
         }
+        /// <summary>
+        /// 跳转到Github
+        /// </summary>
+        private void toolStripStatusLabelName_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/adodo1/MBTileTool");
+        }
 
 
     }

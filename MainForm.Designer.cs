@@ -32,7 +32,7 @@
             this.statusStripInfo = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelName = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelReward = new System.Windows.Forms.ToolStripStatusLabel();
             this.listBoxFiles = new System.Windows.Forms.ListBox();
             this.toolStripnPack = new System.Windows.Forms.ToolStrip();
@@ -63,7 +63,7 @@
             this.statusStripInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelStatus,
             this.toolStripStatusLabel4,
-            this.toolStripStatusLabel2,
+            this.toolStripStatusLabelName,
             this.toolStripStatusLabelReward});
             this.statusStripInfo.Location = new System.Drawing.Point(0, 296);
             this.statusStripInfo.Name = "statusStripInfo";
@@ -80,16 +80,17 @@
             // toolStripStatusLabel4
             // 
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(317, 17);
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(286, 17);
             this.toolStripStatusLabel4.Spring = true;
             // 
-            // toolStripStatusLabel2
+            // toolStripStatusLabelName
             // 
-            this.toolStripStatusLabel2.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(65, 17);
-            this.toolStripStatusLabel2.Text = "『=DoDo=』";
-            this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripStatusLabelName.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.toolStripStatusLabelName.Name = "toolStripStatusLabelName";
+            this.toolStripStatusLabelName.Size = new System.Drawing.Size(65, 17);
+            this.toolStripStatusLabelName.Text = "『=DoDo=』";
+            this.toolStripStatusLabelName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripStatusLabelName.Click += new System.EventHandler(this.toolStripStatusLabelName_Click);
             // 
             // toolStripStatusLabelReward
             // 
@@ -292,7 +293,7 @@
 
         private System.Windows.Forms.StatusStrip statusStripInfo;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelStatus;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelName;
         private System.Windows.Forms.ListBox listBoxFiles;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelReward;
