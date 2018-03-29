@@ -32,10 +32,10 @@
             this.statusStripInfo = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabelReward = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelReward = new System.Windows.Forms.ToolStripStatusLabel();
             this.listBoxFiles = new System.Windows.Forms.ListBox();
-            this.toolStripPack = new System.Windows.Forms.ToolStrip();
+            this.toolStripnPack = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonMore = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonAdd = new System.Windows.Forms.ToolStripButton();
@@ -48,17 +48,26 @@
             this.toolStripnExtract = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonOutPath = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonFileExt = new System.Windows.Forms.ToolStripButton();
             this.toolStripComboBoxExt = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonExtract = new System.Windows.Forms.ToolStripButton();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStripInfo.SuspendLayout();
+            this.toolStripnPack.SuspendLayout();
+            this.toolStripnExtract.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStripInfo
             // 
+            this.statusStripInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelStatus,
+            this.toolStripStatusLabel4,
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabelReward});
             this.statusStripInfo.Location = new System.Drawing.Point(0, 296);
             this.statusStripInfo.Name = "statusStripInfo";
-            this.statusStripInfo.Size = new System.Drawing.Size(454, 22);
+            this.statusStripInfo.Size = new System.Drawing.Size(455, 22);
             this.statusStripInfo.TabIndex = 0;
             this.statusStripInfo.Text = "状态栏";
             // 
@@ -71,8 +80,16 @@
             // toolStripStatusLabel4
             // 
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(316, 17);
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(317, 17);
             this.toolStripStatusLabel4.Spring = true;
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(65, 17);
+            this.toolStripStatusLabel2.Text = "『=DoDo=』";
+            this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // toolStripStatusLabelReward
             // 
@@ -83,14 +100,6 @@
             this.toolStripStatusLabelReward.Text = "打赏";
             this.toolStripStatusLabelReward.Click += new System.EventHandler(this.toolStripStatusLabelReward_Click);
             // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(65, 17);
-            this.toolStripStatusLabel2.Text = "『=DoDo=』";
-            this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // listBoxFiles
             // 
             this.listBoxFiles.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -99,16 +108,26 @@
             this.listBoxFiles.Location = new System.Drawing.Point(0, 50);
             this.listBoxFiles.Name = "listBoxFiles";
             this.listBoxFiles.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBoxFiles.Size = new System.Drawing.Size(454, 246);
+            this.listBoxFiles.Size = new System.Drawing.Size(455, 246);
             this.listBoxFiles.TabIndex = 3;
             // 
-            // toolStripPack
+            // toolStripnPack
             // 
-            this.toolStripPack.Location = new System.Drawing.Point(0, 0);
-            this.toolStripPack.Name = "toolStripPack";
-            this.toolStripPack.Size = new System.Drawing.Size(454, 25);
-            this.toolStripPack.TabIndex = 3;
-            this.toolStripPack.Text = "打包工具";
+            this.toolStripnPack.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonMore,
+            this.toolStripSeparator1,
+            this.toolStripButtonAdd,
+            this.toolStripSeparator2,
+            this.toolStripButtonDel,
+            this.toolStripSeparator3,
+            this.toolStripButtonClearn,
+            this.toolStripSeparator4,
+            this.toolStripButtonPack});
+            this.toolStripnPack.Location = new System.Drawing.Point(0, 0);
+            this.toolStripnPack.Name = "toolStripnPack";
+            this.toolStripnPack.Size = new System.Drawing.Size(455, 25);
+            this.toolStripnPack.TabIndex = 3;
+            this.toolStripnPack.Text = "打包工具";
             // 
             // toolStripButtonMore
             // 
@@ -177,9 +196,16 @@
             // 
             // toolStripnExtract
             // 
+            this.toolStripnExtract.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonOutPath,
+            this.toolStripSeparator6,
+            this.toolStripButtonFileExt,
+            this.toolStripComboBoxExt,
+            this.toolStripSeparator7,
+            this.toolStripButtonExtract});
             this.toolStripnExtract.Location = new System.Drawing.Point(0, 25);
             this.toolStripnExtract.Name = "toolStripnExtract";
-            this.toolStripnExtract.Size = new System.Drawing.Size(454, 25);
+            this.toolStripnExtract.Size = new System.Drawing.Size(455, 25);
             this.toolStripnExtract.TabIndex = 4;
             this.toolStripnExtract.Text = "提取工具";
             // 
@@ -197,14 +223,14 @@
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton1
+            // toolStripButtonFileExt
             // 
-            this.toolStripButton1.Enabled = false;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(73, 22);
-            this.toolStripButton1.Text = "文件扩展";
+            this.toolStripButtonFileExt.Enabled = false;
+            this.toolStripButtonFileExt.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonFileExt.Image")));
+            this.toolStripButtonFileExt.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonFileExt.Name = "toolStripButtonFileExt";
+            this.toolStripButtonFileExt.Size = new System.Drawing.Size(73, 22);
+            this.toolStripButtonFileExt.Text = "文件扩展";
             // 
             // toolStripComboBoxExt
             // 
@@ -213,7 +239,7 @@
             "PNG",
             "PBF"});
             this.toolStripComboBoxExt.Name = "toolStripComboBoxExt";
-            this.toolStripComboBoxExt.Size = new System.Drawing.Size(75, 20);
+            this.toolStripComboBoxExt.Size = new System.Drawing.Size(75, 25);
             // 
             // toolStripSeparator7
             // 
@@ -229,20 +255,32 @@
             this.toolStripButtonExtract.Text = "提取";
             this.toolStripButtonExtract.Click += new System.EventHandler(this.toolStripButtonExtract_Click);
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(131, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 318);
+            this.ClientSize = new System.Drawing.Size(455, 318);
             this.Controls.Add(this.listBoxFiles);
             this.Controls.Add(this.toolStripnExtract);
-            this.Controls.Add(this.toolStripPack);
+            this.Controls.Add(this.toolStripnPack);
             this.Controls.Add(this.statusStripInfo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "瓦片工具 v1.0";
+            this.statusStripInfo.ResumeLayout(false);
+            this.statusStripInfo.PerformLayout();
+            this.toolStripnPack.ResumeLayout(false);
+            this.toolStripnPack.PerformLayout();
+            this.toolStripnExtract.ResumeLayout(false);
+            this.toolStripnExtract.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,7 +294,7 @@
         private System.Windows.Forms.ListBox listBoxFiles;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelReward;
-        private System.Windows.Forms.ToolStrip toolStripPack;
+        private System.Windows.Forms.ToolStrip toolStripnPack;
         private System.Windows.Forms.ToolStripButton toolStripButtonMore;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButtonAdd;
@@ -272,7 +310,8 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBoxExt;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton toolStripButtonExtract;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonFileExt;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
 
     }
 }

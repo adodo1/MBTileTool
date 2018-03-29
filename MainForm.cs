@@ -212,6 +212,7 @@ namespace MBTileTool
                     if (Directory.Exists(savedir) == false) Directory.CreateDirectory(savedir);
                     File.WriteAllBytes(savename, data);
                 }
+                toolStripStatusLabelStatus.Text = "就绪";
                 MessageBox.Show("完成", "数据提取", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex) {
