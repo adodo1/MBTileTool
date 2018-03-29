@@ -237,7 +237,9 @@
             this.toolStripComboBoxExt.Items.AddRange(new object[] {
             "JPG",
             "PNG",
-            "PBF"});
+            "PBF",
+            "JSON",
+            "terrain"});
             this.toolStripComboBoxExt.Name = "toolStripComboBoxExt";
             this.toolStripComboBoxExt.Size = new System.Drawing.Size(75, 25);
             // 

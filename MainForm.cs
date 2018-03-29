@@ -101,6 +101,13 @@ namespace MBTileTool
             string mbtiles = dialog.FileName;
             SQLiteHelper.SetConnectionString = string.Format("Data Source=\"{0}\"", mbtiles);
             InitDB();
+
+            // 必须使用事务 否则太慢了
+            SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source=\"{0}\"", mbtiles));
+            connection.Open();
+            SQLiteTransaction transaction = connection.BeginTransaction();
+
+
             //
             int num = 0;
             foreach (var item in listBoxFiles.Items) {
@@ -119,14 +126,18 @@ namespace MBTileTool
                 string sql = @"
                     replace into TILES(TILE_COLUMN, TILE_ROW, ZOOM_LEVEL, TILE_DATA)
                     values(@TILE_COLUMN, @TILE_ROW, @ZOOM_LEVEL, @TILE_DATA)";
+
                 SQLiteParameter[] args = new SQLiteParameter[4];
                 args[0] = new SQLiteParameter("@TILE_COLUMN", colrowzoom[0]);
                 args[1] = new SQLiteParameter("@TILE_ROW", colrowzoom[1]);
                 args[2] = new SQLiteParameter("@ZOOM_LEVEL", colrowzoom[2]);
                 args[3] = new SQLiteParameter("@TILE_DATA", data);
                 // 
-                int result = SQLiteHelper.ExecuteNonQuery(CommandType.Text, sql, args);
+                int result = SQLiteHelper.ExecuteNonQuery(transaction, CommandType.Text, sql, args);
             }
+            transaction.Commit();
+            connection.Close();
+
             toolStripStatusLabelStatus.Text = "就绪";
             MessageBox.Show("完成", "数据打包", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
